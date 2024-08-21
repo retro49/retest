@@ -1,7 +1,7 @@
 # RETEST
 ## Easy to use single header, unit tesing library.
 
-## Four simple steps to test your programs
+### Four simple steps to test your programs
 - Init test
 - Start test
 - Add test
