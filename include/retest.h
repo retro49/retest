@@ -16,11 +16,11 @@ struct retest_test {
 #define RETEST_TESTING_INIT \
 struct retest_test __retest_test_record = {0};
 
-#define __RETEST_TESTING_UPDATE_PASS \
+#define __RETEST_TESTING_UPDATE_PASS            \
         __retest_test_record.test_passed += 1;  \
         __retest_test_record.test_total += 1;
 
-#define __RETEST_TESTING_UPDATE_FAIL \
+#define __RETEST_TESTING_UPDATE_FAIL            \
         __retest_test_record.test_failed += 1;  \
         __retest_test_record.test_total += 1;
 
