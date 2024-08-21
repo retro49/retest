@@ -8,29 +8,38 @@
 - End tset
 
 ```c
-#include "retest.h"
+// initialize the test
+RETEST_TESTING_INIT
 
-RETEST_INIT_TESTING // initializes the test
-
-//  testing function
-void testing_function1()
+// NOTE: test functions does not take any argument
+void test_function1()
 {
-    int left = get_left();
-    int right = get_right();
-    RETEST_ASSERT(left < right); // asserts and expression
+        RETEST_ASSERT(true);
 }
 
-void testing_function2()
+// NOTE: test functions does not take any argument
+void test_function2()
 {
-    RETEST_ASSERT_EQ(1, 1); // checks if left and right are equal
+        int left = 0;
+        int right = 0;
+        RETEST_ASSERT_EQ(left, right)
 }
 
-RETEST_START_TEST       // call to start the function
+// NOTE: test functions does not take any argument
+void test_function3()
+{
+        int left = 0;
+        int right = 1;
+        RETEST_ASSERT_NE(left, right)
+}
+
+// start the test
+RETEST_TESTING_START
 // add your function here
 // NOTE: functions must not take any argument
-RETEST_ADD_TEST(testing_function1)  
-RETEST_ADD_TEST(testing_function2)
+RETEST_TESTING_ADD(test_function1)
+RETEST_TESTING_ADD(test_function2)
+RETEST_TESTING_ADD(test_function3)
 // finally end the test result
-RETEST_END_TEST
+RETEST_TESTING_END
 ```
-
